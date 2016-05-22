@@ -38,7 +38,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/drawer_header_button_margin"
+        android:focusable="true"
         android:id="@+id/logInOrOut"
+        android:contentDescription="@string/cd_login_or_logout"
         android:layout_toLeftOf="@+id/drawerSettings"
         android:layout_toStartOf="@+id/drawerSettings"
         android:src="@drawable/login"
@@ -53,6 +55,8 @@
         android:id="@+id/drawerSettings"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:focusable="true"
+        android:contentDescription="@string/cd_drawer_menu"
         android:src="@drawable/ic_more_vert_black_24dp"
         style="?android:attr/borderlessButtonStyle"
         android:onClick="onDrawerSettingsButtonPressed"/>

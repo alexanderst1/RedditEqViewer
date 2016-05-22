@@ -46,7 +46,7 @@
                 android:layout_margin="4dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="/r/subreddit"/>
+                />
 
             <TextView
                 android:id="@+id/link_when"
@@ -57,7 +57,7 @@
                 android:layout_margin="4dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="when"/>
+                />
 
             <TextView
                 android:id="@+id/link_domain"
@@ -71,7 +71,7 @@
                 android:singleLine="true"
                 android:ellipsize="end"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="domain"/>
+                />
 
         </RelativeLayout>
 
@@ -102,7 +102,7 @@
             android:ellipsize="end"
             android:padding="1sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="Title"/>
+            />
 
         <View
             android:id="@+id/bottom_divider"
@@ -133,7 +133,7 @@
                 android:layout_margin="4dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="000 comments"/>
+                />
 
             <TextView
                 android:id="@+id/link_score"
@@ -144,7 +144,7 @@
                 android:layout_margin="4dp"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="0000"/>
+                />
 
 
             <TextView
@@ -159,7 +159,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="by author"/>
+                />
 
             <TextView
                 android:id="@+id/link_position"
@@ -169,7 +169,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_margin="4dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:text="#0"/>
+                />
 
         </RelativeLayout>
 

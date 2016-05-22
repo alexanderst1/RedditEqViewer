@@ -65,6 +65,13 @@
 
     <string name="title_activity_settings">Settings</string>
 
+    <string name="cd_start_search">start search</string>
+    <string name="cd_remove_user">remove user name from list of saved users</string>
+    <string name="cd_select_user">select user from list of saved users</string>
+    <string name="cd_change_subscription">remove or add subreddit from or to subscription</string>
+    <string name="cd_login_or_logout">Log in or log out from subreddit.com</string>
+    <string name="cd_drawer_menu">drawer menu</string>
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

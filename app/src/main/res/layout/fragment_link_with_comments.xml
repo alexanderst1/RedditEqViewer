@@ -29,7 +29,7 @@
             android:layout_margin="4dp"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="r/subreddit"/>
+            />
 
         <TextView
             android:id="@+id/pager_domain"
@@ -42,7 +42,7 @@
             android:ellipsize="end"
             android:onClick="onLinkClick"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="domain"/>
+            />
 
     </RelativeLayout>
 
@@ -65,7 +65,7 @@
         android:onClick="onLinkClick"
         android:padding="1sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:text="Title"/>
+        />
 
     <View
         android:id="@+id/bottom_divider"
@@ -92,7 +92,7 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="by author"/>
+            />
 
         <TextView
             android:id="@+id/pager_when"
@@ -105,7 +105,7 @@
             android:layout_margin="4dp"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="when"/>
+            />
 
         <TextView
             android:id="@+id/pager_position"
@@ -115,7 +115,7 @@
             android:layout_alignParentEnd="true"
             android:layout_margin="4dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="#0"/>
+            />
 
     </RelativeLayout>
 
@@ -146,7 +146,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         android:linksClickable="true"
         android:autoLink="all"
-        android:text="Self text"/>
+        />
 
     <!-- BOTTOM ROW -->
     <RelativeLayout
@@ -168,7 +168,7 @@
             android:layout_margin="4dp"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="000 comments"/>
+            />
 
         <TextView
             android:id="@+id/pager_score"
@@ -179,7 +179,7 @@
             android:layout_margin="4dp"
             android:singleLine="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="0000"/>
+            />
 
     </RelativeLayout>
 

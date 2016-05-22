@@ -45,6 +45,7 @@
                 android:layout_toLeftOf="@+id/start_search"
                 android:layout_toStartOf="@+id/start_search"
                 android:layout_centerVertical="true"
+                android:focusable="true"
                 android:hint="@string/search_hint"
                 android:inputType="text"
                 android:imeOptions="actionSearch" />
@@ -56,6 +57,8 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
+                android:focusable="true"
+                android:contentDescription="@string/cd_start_search"
                 style="?android:attr/borderlessButtonStyle"
                 android:src="@drawable/ic_keyboard_arrow_right_black_24dp"/>
 

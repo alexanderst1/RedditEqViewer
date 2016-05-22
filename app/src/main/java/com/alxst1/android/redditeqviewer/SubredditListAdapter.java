@@ -41,6 +41,7 @@ public class SubredditListAdapter extends CursorAdapter {
 
     private void highlightTextInTextView(TextView v, String text, String highlightString) {
         int length = highlightString != null ? highlightString.length() : 0;
+        v.setContentDescription(text);
         if (length > 0) {
             Spannable spanText = Spannable.Factory.getInstance().newSpannable(text);
             Resources r = mActivity.getResources();
