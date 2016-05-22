@@ -24,4 +24,7 @@ public class Constants {
     public static final String EXTRA_LINK_URL = "link_url";
     public static final String EXTRA_LINK_TITLE = "link_title";
     public static final String HTTP_PREFIX = "http";
+    public static final String[] OPEN_EXTERNAL = new String[] {"youtube.com", "youtu.be"};
+    public static final String ACTION_SHOW_LINKS_FOR_SUBREDDIT =
+            "com.alxst1.android.redditeqviewer.SHOW_LINKS_FOR_SUBREDDIT";
 }

@@ -9,6 +9,7 @@
     <string name="menu_copy_url">Copy URL</string>
     <string name="menu_refresh_comments">Refresh Comments</string>
     <string name="menu_refresh">Refresh</string>
+    <string name="menu_share_link">Share</string>
 
     <string name="button_caption_ok">OK</string>
     <string name="button_caption_cancel">Cancel</string>
@@ -71,6 +72,15 @@
     <string name="cd_change_subscription">remove or add subreddit from or to subscription</string>
     <string name="cd_login_or_logout">Log in or log out from subreddit.com</string>
     <string name="cd_drawer_menu">drawer menu</string>
+
+    <string name="empty_widget_view_text">No subreddit links available :(</string>
+
+    <string name="test_link_subreddit_name" translatable="false">r/Jokes</string>
+    <string name="test_link_title" translatable="false">Lorem ipsum amet mi tristique turpis dapibus felis eget facilisis aliquam velit nullam.</string>
+    <string name="test_link_num_comments" translatable="false">000</string>
+    <string name="test_link_score" translatable="false">0000</string>
+    <string name="test_link_num_links" translatable="false">00</string>
+    <string name="test_link_list_order_num" translatable="false">00</string>
 
     <!-- Strings related to Settings -->
 

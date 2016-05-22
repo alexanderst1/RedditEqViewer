@@ -203,18 +203,15 @@ public class Util {
     }
 
     public static void deleteSubredditsFromDb(Context c) {
-        c.getContentResolver()
-                .delete(SubredditEntry.CONTENT_URI, null, null);
+        c.getContentResolver().delete(SubredditEntry.CONTENT_URI, null, null);
     }
 
     public static void deleteLinksFromDb(Context c) {
-        c.getContentResolver()
-                .delete(LinkEntry.CONTENT_URI, null, null);
+        c.getContentResolver().delete(LinkEntry.CONTENT_URI, null, null);
     }
 
     public static void deleteCurrLinksFromDb(Context c) {
-        c.getContentResolver()
-                .delete(CurrLinkEntry.CONTENT_URI, null, null);
+        c.getContentResolver().delete(CurrLinkEntry.CONTENT_URI, null, null);
     }
 
     public static void writeSubredditSearchIntoDb(Context c, JSONObject response) {

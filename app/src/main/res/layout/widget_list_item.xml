@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/widget_list_item_width"
+    android:layout_height="@dimen/widget_list_item_height"
+    android:id="@+id/widget_list_item"
+    android:background="@drawable/bg_widget_list_item">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--TOP ROW-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_link_list_order_num"
+            android:id="@+id/wid_list_order_num"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/widget_list_item_text_color"
+            android:textSize="@dimen/widget_list_order_num_text_size"
+            android:layout_marginLeft="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginStart="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginTop="@dimen/widget_list_item_order_num_padding_vert"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_link_subreddit_name"
+            android:id="@+id/wid_subreddit_name"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/wid_list_order_num"
+            android:layout_toEndOf="@id/wid_list_order_num"
+            android:layout_marginLeft="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginStart="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginRight="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginEnd="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginTop="@dimen/widget_list_item_order_num_padding_vert"
+            android:textColor="@color/widget_list_item_text_color"
+            android:textSize="@dimen/widget_list_item_subrddt_text_size"
+            />
+
+        <!--MIDDLE ROW-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_link_title"
+            android:id="@+id/wid_title"
+            android:layout_below="@id/wid_subreddit_name"
+            android:layout_above="@+id/wid_num_cmnts"
+            android:layout_marginLeft="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginStart="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginRight="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginEnd="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginTop="@dimen/widget_list_item_order_num_padding_vert"
+            android:layout_marginBottom="@dimen/widget_list_item_order_num_padding_vert"
+            android:textColor="@color/widget_list_item_text_color"
+            android:textSize="@dimen/widget_list_item_title_text_size"
+            android:gravity="center"
+            />
+
+        <!--BOTTOM ROW-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_link_num_comments"
+            android:id="@+id/wid_num_cmnts"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginStart="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginRight="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginEnd="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginBottom="@dimen/widget_list_item_order_num_padding_vert"
+            android:textColor="@color/widget_list_item_text_color"
+            android:textSize="@dimen/widget_list_item_num_cmnts_text_size"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_link_score"
+            android:id="@+id/wid_score"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/wid_num_cmnts"
+            android:layout_toEndOf="@id/wid_num_cmnts"
+            android:layout_toRightOf="@+id/wid_num_links"
+            android:layout_toStartOf="@+id/wid_num_links"
+            android:layout_marginBottom="@dimen/widget_list_item_order_num_padding_vert"
+            android:textColor="@color/widget_list_item_text_color"
+            android:textSize="@dimen/widget_list_item_score_text_size"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_link_num_links"
+            android:id="@+id/wid_num_links"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginStart="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginRight="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginEnd="@dimen/widget_list_item_order_num_padding_horiz"
+            android:layout_marginBottom="@dimen/widget_list_item_order_num_padding_vert"
+            android:textColor="@color/widget_list_item_text_color"
+            android:textSize="@dimen/widget_list_item_score_text_size"
+            />
+
+    </RelativeLayout>
+
+</FrameLayout>

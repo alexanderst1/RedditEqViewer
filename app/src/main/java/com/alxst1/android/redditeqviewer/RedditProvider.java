@@ -152,7 +152,8 @@ public class RedditProvider extends ContentProvider {
             }
             case LINK: {
                 String lastPathSegment = uri.getLastPathSegment();
-                if (lastPathSegment.equals(RedditContract.SUB_PATH_LINKS_TOP_N)) {
+                if (lastPathSegment.equals(RedditContract.SUB_PATH_LINKS_TOP_N)
+                        || lastPathSegment.equals(RedditContract.SUB_PATH_LINKS_TOP_N_WIDGET)) {
                     /**
                      select _id, (select count(*) from links as links_for_position where
                      links_for_position.subreddit = links_main.subreddit and
@@ -168,8 +169,6 @@ public class RedditProvider extends ContentProvider {
                      actual_position = num_links-1 and actual_position < saved_position) order by
                      max_score desc, links_main._id asc
                      */
-                    //Should match order of columns defined in MainActivity constants
-                    // COL_LINK_ROWID, ...
                     String query = "select " +
                             LinkEntry._ID + ", " +
                             //POSITION (actual position, is equal to saved and is used as a variable
@@ -187,21 +186,29 @@ public class RedditProvider extends ContentProvider {
                             "(select count(*) from " +
                             LinkEntry.TABLE_NAME + " as links_for_count where links_for_count." +
                             LinkEntry.COLUMN_SUBREDDIT + " = links_main." +
-                            LinkEntry.COLUMN_SUBREDDIT + ") as num_links, " +
-                            //Regular columns
-                            LinkEntry.COLUMN_ID + ", " +
-                            LinkEntry.COLUMN_TITLE + ", " +
-                            LinkEntry.COLUMN_DOMAIN + ", " +
-                            LinkEntry.COLUMN_AUTHOR + ", " +
-                            LinkEntry.COLUMN_SCORE + ", " +
-                            LinkEntry.COLUMN_NUM_COMMENTS + ", " +
-                            LinkEntry.COLUMN_SUBREDDIT + ", " +
-                            LinkEntry.COLUMN_CREATED_UTC + ", " +
-                            LinkEntry.COLUMN_THUMBNAIL + ", " +
-                            //SAVED_POSITION (saved in separate table, remembers user's choice,
-                            //used as a variable to participate several times in comparison
-                            //expression below))
-                            "ifnull((select " + CurrLinkEntry.COLUMN_POSITION + " from " +
+                            LinkEntry.COLUMN_SUBREDDIT + ") as num_links, ";
+                    if (lastPathSegment.equals(RedditContract.SUB_PATH_LINKS_TOP_N_WIDGET)) {
+                        //Regular columns
+                        query += LinkEntry.COLUMN_TITLE + ", " +
+                                LinkEntry.COLUMN_SCORE + ", " +
+                                LinkEntry.COLUMN_NUM_COMMENTS + ", " +
+                                LinkEntry.COLUMN_SUBREDDIT + ", ";
+                    } else if (lastPathSegment.equals(RedditContract.SUB_PATH_LINKS_TOP_N)) {
+                        //Regular columns
+                        query += LinkEntry.COLUMN_ID + ", " +
+                                LinkEntry.COLUMN_TITLE + ", " +
+                                LinkEntry.COLUMN_DOMAIN + ", " +
+                                LinkEntry.COLUMN_AUTHOR + ", " +
+                                LinkEntry.COLUMN_SCORE + ", " +
+                                LinkEntry.COLUMN_NUM_COMMENTS + ", " +
+                                LinkEntry.COLUMN_SUBREDDIT + ", " +
+                                LinkEntry.COLUMN_CREATED_UTC + ", " +
+                                LinkEntry.COLUMN_THUMBNAIL + ", ";
+                    }
+                    //SAVED_POSITION (saved in separate table, remembers user's choice,
+                    //used as a variable to participate several times in comparison
+                    //expression below))
+                    query += "ifnull((select " + CurrLinkEntry.COLUMN_POSITION + " from " +
                             CurrLinkEntry.TABLE_NAME + " where " + CurrLinkEntry.TABLE_NAME + "." +
                             CurrLinkEntry.COLUMN_SUBREDDIT + " = links_main." +
                             LinkEntry.COLUMN_SUBREDDIT + "), 0) as saved_position, " +
@@ -215,11 +222,13 @@ public class RedditProvider extends ContentProvider {
                             "(actual_position = saved_position or actual_position = num_links-1 " +
                             "and actual_position < saved_position) " +
                             "order by max_score desc, links_main." + LinkEntry._ID + " asc";
-                     retCursor = db.rawQuery(query, null);
+                    retCursor = db.rawQuery(query, null);
                 } else if (!lastPathSegment.isEmpty() &&
                         !lastPathSegment.equals(RedditContract.PATH_LINKS)) {
                     String query = "select " + LinkEntry._ID + ", " +
-                            "(select count(*) from links as lp where lp.subreddit = lm.subreddit and (lp.score > lm.score or (lp.score = lm.score and lp._id < lm._id))) as pos, " +
+                            "(select count(*) from links as lp where lp.subreddit = lm.subreddit " +
+                            "and (lp.score > lm.score or " +
+                            "(lp.score = lm.score and lp._id < lm._id))) as pos, " +
                             LinkEntry.COLUMN_ID + ", " +
                             LinkEntry.COLUMN_TITLE + ", " +
                             LinkEntry.COLUMN_DOMAIN + ", " +
@@ -240,7 +249,8 @@ public class RedditProvider extends ContentProvider {
                             LinkEntry.COLUMN_IMG_LAND + ", " +
                             LinkEntry.COLUMN_IMG_LAND_WIDTH + ", " +
                             LinkEntry.COLUMN_IMG_LAND_HEIGH + " " +
-                            "from links as lm where lm.subreddit = '" + lastPathSegment + "' order by pos asc";
+                            "from links as lm where lm.subreddit = '" + lastPathSegment +
+                            "' order by pos asc";
                     retCursor = db.rawQuery(query, null);
                 }
                 else {

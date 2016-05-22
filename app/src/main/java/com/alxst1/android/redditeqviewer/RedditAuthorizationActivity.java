@@ -45,9 +45,8 @@ public class RedditAuthorizationActivity extends AppCompatActivity {
             boolean isCodeReceived = false;
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
                 Log.i(LOG_TAG, "shouldOverrideUrlLoading, url: " + url);
-                return true;
+                return false;
             }
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {

@@ -18,6 +18,7 @@ public class RedditContract {
     public static final String SUBPATH_ANONYMOUS = "anonym";
     public static final String PATH_LINKS = "links";
     public static final String SUB_PATH_LINKS_TOP_N = "topn";
+    public static final String SUB_PATH_LINKS_TOP_N_WIDGET = "topn_wid";
     public static final String PATH_CURRENT_LINKS = "curr_links";
 
     public static final class UserEntry implements BaseColumns {

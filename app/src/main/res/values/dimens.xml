@@ -24,4 +24,18 @@
     <item name="links_list_item_height_multiplier" format="float" type="dimen">2</item>
     <item name="view_width_ratio_left_ignore_horiz_swipe" format="float" type="dimen">0.1</item>
     <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="widget_margin">0dp</dimen>
+    <dimen name="widget_no_info_text_size">12sp</dimen>
+    <dimen name="widget_list_item_width">100dp</dimen>
+    <dimen name="widget_list_item_height">100dp</dimen>
+    <dimen name="widget_list_order_num_text_size">10sp</dimen>
+    <dimen name="widget_list_item_subrddt_text_size">10sp</dimen>
+    <dimen name="widget_list_item_title_text_size">10sp</dimen>
+    <dimen name="widget_list_item_num_cmnts_text_size">10sp</dimen>
+    <dimen name="widget_list_item_score_text_size">10sp</dimen>
+
+    <dimen name="widget_list_item_order_num_padding_horiz">4dp</dimen>
+    <dimen name="widget_list_item_order_num_padding_vert">2dp</dimen>
+
 </resources>

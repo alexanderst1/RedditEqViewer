@@ -158,6 +158,7 @@ public class LinkListAdapter extends CursorAdapter {
                         c.getString(MainActivity.COL_SUBREDDIT));
                 intent.putExtra(Constants.EXTRA_LINK_COUNT, c.getInt(MainActivity.COL_COUNT));
                 intent.putExtra(Constants.EXTRA_LINK_POSITION, c.getInt(MainActivity.COL_POSITION));
+                intent.setAction(Constants.ACTION_SHOW_LINKS_FOR_SUBREDDIT);
                 mActivity.startActivity(intent);
             }
             return true;

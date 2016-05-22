@@ -24,6 +24,7 @@
 
         <provider
             android:name=".RedditProvider"
+            android:exported="true"
             android:authorities="com.alxst1.android.redditeqviewer" />
 
         <activity
@@ -40,10 +41,23 @@
             android:name=".LinkWebViewActivity"
             android:label=""
             android:parentActivityName=".LinkWithCommentsActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings"/>
+
+        <receiver android:name=".StackWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" />
+        </receiver>
+        <service
+            android:name=".StackWidgetService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
     </application>
 
 </manifest>

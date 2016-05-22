@@ -47,9 +47,14 @@ public class LinkWebViewActivity extends AppCompatActivity {
         mWebView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
                 Log.i(LOG_TAG, "shouldOverrideUrlLoading, url: " + url);
-                return true;
+                for (String s : Constants.OPEN_EXTERNAL) {
+                    if (url.contains(s)) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                        return true;
+                    }
+                }
+                return false;
             }
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {

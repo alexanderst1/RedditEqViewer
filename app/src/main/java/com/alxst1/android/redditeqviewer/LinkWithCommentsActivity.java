@@ -12,9 +12,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
@@ -33,6 +35,8 @@ import com.squareup.picasso.RequestCreator;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.alxst1.android.redditeqviewer.RedditContract.LinkEntry;
 
 public class LinkWithCommentsActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -55,6 +59,7 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
     private int mLinkCount;
     private int mLinkPosition;
     private Cursor mCursorLinks;
+    private ShareActionProvider mShareActionProvider;
 
     private static final int LINKS_PAGER_LOADER = 0;
 
@@ -93,9 +98,11 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
-        mSubreddit = intent.getStringExtra(Constants.EXTRA_SUBREDDIT_NAME);
-        mLinkCount = intent.getIntExtra(Constants.EXTRA_LINK_COUNT, 0);
-        mLinkPosition = intent.getIntExtra(Constants.EXTRA_LINK_POSITION, 0);
+        if (intent != null && intent.getAction() == Constants.ACTION_SHOW_LINKS_FOR_SUBREDDIT) {
+            mSubreddit = intent.getStringExtra(Constants.EXTRA_SUBREDDIT_NAME);
+            mLinkCount = intent.getIntExtra(Constants.EXTRA_LINK_COUNT, 0);
+            mLinkPosition = intent.getIntExtra(Constants.EXTRA_LINK_POSITION, 0);
+        }
 
         getLoaderManager().initLoader(LINKS_PAGER_LOADER, null, this);
 
@@ -109,6 +116,25 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
         if (mViewPager != null) {
             mViewPager.setAdapter(mSectionsPagerAdapter);
             mViewPager.setCurrentItem(mLinkPosition);
+            mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                @Override
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                    String url = getLinkUrl();
+                    if (url != null) {
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, url);
+                        sendIntent.setType("text/plain");
+                        setShareIntent(sendIntent);
+                    }
+                }
+                @Override
+                public void onPageSelected(int position) {
+                }
+                @Override
+                public void onPageScrollStateChanged(int state) {
+                }
+            });
         }
     }
 
@@ -121,8 +147,20 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
         super.onBackPressed();
     }
 
+    private String getLinkUrl() {
+        String res = null;
+        if (mCursorLinks == null || mCursorLinks.isClosed() ||
+                !mCursorLinks.moveToPosition(mViewPager.getCurrentItem()))
+            return res;
+        String url = mCursorLinks.getString(COL_URL);
+        if (!url.startsWith(Constants.HTTP_PREFIX))
+            return null;
+        return mCursorLinks.getString(COL_URL);
+    }
+
     public void onLinkClick (View view) {
-        if (mCursorLinks == null || mCursorLinks.isClosed() || !mCursorLinks.moveToPosition(mViewPager.getCurrentItem()))
+        if (mCursorLinks == null || mCursorLinks.isClosed() ||
+                !mCursorLinks.moveToPosition(mViewPager.getCurrentItem()))
             return;
         String url = mCursorLinks.getString(COL_URL);
         if (!url.startsWith(Constants.HTTP_PREFIX))
@@ -141,7 +179,17 @@ public class LinkWithCommentsActivity extends AppCompatActivity implements
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_link_with_comments, menu);
+        // Locate MenuItem with ShareActionProvider
+        MenuItem item = menu.findItem(R.id.action_share_link);
+        // Fetch and store ShareActionProvider
+        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
         return true;
+    }
+
+    private void setShareIntent(Intent shareIntent) {
+        if (mShareActionProvider != null) {
+            mShareActionProvider.setShareIntent(shareIntent);
+        }
     }
 
     @Override

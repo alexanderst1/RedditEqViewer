@@ -13,4 +13,5 @@
     <color name="colorDrawableMargin">#BDBDBD</color> <!--Grey 400-->
     <color name="colorTextMain">#212121</color> <!--Grey 900-->
     <color name="colorForR">@android:color/darker_gray</color>
+    <color name="widget_list_item_text_color">@color/colorTextMain</color>
 </resources>
