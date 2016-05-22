@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">Eqv Viewer for Reddit</string>
+    
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_open_external">Open External</string>
+    <string name="menu_copy_url">Copy URL</string>
+    <string name="menu_refresh_comments">Refresh Comments</string>
+    <string name="menu_refresh">Refresh</string>
+
+    <string name="button_caption_ok">OK</string>
+    <string name="button_caption_cancel">Cancel</string>
+    <string name="select_user_dialog_title">Choose an account</string>
+
+    <string name="user_name_design_time">user_name</string>
+    <string name="subreddit_name_design_time">subreddit_name</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>'
+
+    <string name="log_in">Log in</string>
+    <string name="new_user">New user</string>
+    <string name="anonymous">Anonymous</string>
+
+    <string name="unsubsc_success_message">Unsubscribed from \'%s\'</string>
+    <string name="subscr_success_message">Subscribed to \'%s\'</string>
+    <string name="unsubsc_failure_message">Failed to unsubscribe, error %d</string>
+    <string name="subscr_failure_message">Failed to subscribe, error %d</string>
+    <string name="unsubsc_failure_message_anonym">Failed to unsubscribe</string>
+    <string name="subscr_failure_message_anonym">Failed to subscribe</string>
+    <string name="unsubscr_hint">Double tap to unsubscribe</string>
+
+    <string name="search_hint">Type a community name</string>
+    <string name="search_success_message">Found %d matches</string>
+    <string name="search_failure_message">Search failed, error %d</string>
+    <string name="empty_search_string">Search string is empty</string>
+
+    <string name="authoriz_failed">Reddit authorization failed</string>
+
+    <string name="num_commments">%d comments</string>
+    <string name="subreddit_name">r/%s</string>
+    <string name="subreddit_prefix">r/</string>
+    <string name="position_format_str">%1$s%2$d/%3$d%4$s</string>
+    <string name="title_activity_link_with_comments">@string/app_name</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="loading_comments">Loading comments...</string>
+
+    <string name="cliboard_label">URL from Eqv Viewer for Reddit</string>
+    <string name="clipboard_text">URL copied to clipboard</string>
+
+    <string name="pref_nsfw_title">NSFW filtering</string>
+    <string name="pref_nsfw_summary">Hide posts with adult content</string>
+    <string name="pref_nsfw_key">pref_key_nsfw</string>
+
+    <string name="pref_dev_title">Developer</string>
+    <string name="pref_dev_summary">Alexander Starostin</string>
+    <string name="pref_dev_key">pref_dev_key</string>
+
+    <string name="pref_buildnum_title">Version</string>
+    <string name="pref_buildnum_summary">-1.-1</string>
+    <string name="pref_buildnum_key">pref_buildnum_key</string>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <!--<string name="pref_title_social_recommendations">Enable social recommendations</string>-->
+    <!--<string name="pref_description_social_recommendations">Recommendations for people to contact-->
+        <!--based on your message history-->
+    <!--</string>-->
+
+    <!--<string name="pref_title_display_name">Display name</string>-->
+    <!--<string name="pref_default_display_name">John Smith</string>-->
+
+    <!--<string name="pref_title_add_friends_to_messages">Add friends to messages</string>-->
+    <!--<string-array name="pref_example_list_titles">-->
+        <!--<item>Always</item>-->
+        <!--<item>When possible</item>-->
+        <!--<item>Never</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="pref_example_list_values">-->
+        <!--<item>1</item>-->
+        <!--<item>0</item>-->
+        <!--<item>-1</item>-->
+    <!--</string-array>-->
+
+    <!-- Example settings for Data & Sync -->
+    <!--<string name="pref_header_data_sync">Data &amp; sync</string>-->
+
+    <!--<string name="pref_title_sync_frequency">Sync frequency</string>-->
+    <!--<string-array name="pref_sync_frequency_titles">-->
+        <!--<item>15 minutes</item>-->
+        <!--<item>30 minutes</item>-->
+        <!--<item>1 hour</item>-->
+        <!--<item>3 hours</item>-->
+        <!--<item>6 hours</item>-->
+        <!--<item>Never</item>-->
+    <!--</string-array>-->
+    <!--<string-array name="pref_sync_frequency_values">-->
+        <!--<item>15</item>-->
+        <!--<item>30</item>-->
+        <!--<item>60</item>-->
+        <!--<item>180</item>-->
+        <!--<item>360</item>-->
+        <!--<item>-1</item>-->
+    <!--</string-array>-->
+
+    <!--<string name="pref_title_system_sync_settings">System sync settings</string>-->
+
+    <!--&lt;!&ndash; Example settings for Notifications &ndash;&gt;-->
+    <!--<string name="pref_header_notifications">Notifications</string>-->
+
+    <!--<string name="pref_title_new_message_notifications">New message notifications</string>-->
+
+    <!--<string name="pref_title_ringtone">Ringtone</string>-->
+    <!--<string name="pref_ringtone_silent">Silent</string>-->
+
+    <!--<string name="pref_title_vibrate">Vibrate</string>-->
+
+</resources>

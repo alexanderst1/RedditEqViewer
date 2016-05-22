@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <android.support.v7.widget.AppCompatRadioButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userNameRadio"
+        android:text="@string/user_name_design_time"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/users_list_item_margin_start"
+        android:layout_marginStart="@dimen/users_list_item_margin_start"
+        android:clickable="true"
+        android:layout_weight="3"
+        />
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/userNameRemove"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_remove_black_24dp"
+        style="?android:attr/borderlessButtonStyle"
+        />
+
+</LinearLayout>

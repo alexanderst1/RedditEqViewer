@@ -1,0 +1,27 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">84dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="users_list_dialog_vertical_margin">16dp</dimen>
+    <dimen name="users_list_dialog_horizontal_margin">16dp</dimen>
+    <dimen name="users_list_dialog_vertical_margin_bottom">8dp</dimen>
+    <dimen name="users_list_max_height">128dp</dimen>
+
+    <dimen name="users_list_item_margin_start">16dp</dimen>
+    <dimen name="users_list_item_margin_end">16dp</dimen>
+
+    <dimen name="drawer_header_button_width">48dp</dimen>
+    <dimen name="drawer_header_button_margin">4dp</dimen>
+    <dimen name="drawer_search_layout_height">56dp</dimen>
+
+    <dimen name="drawer_header_elevation">2dp</dimen>
+
+    <item name="image_height_to_view_height_ratio" format="float" type="dimen">0.6</item>
+    <item name="links_list_item_height_multiplier" format="float" type="dimen">2</item>
+    <item name="view_width_ratio_left_ignore_horiz_swipe" format="float" type="dimen">0.1</item>
+    <dimen name="appbar_padding_top">8dp</dimen>
+</resources>
